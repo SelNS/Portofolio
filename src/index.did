@@ -1,0 +1,23 @@
+// Definisikan service Canister
+service : { 
+  // Metode untuk mendapatkan portofolio berdasarkan ID
+  query getPortfolioById(queryById: text) : async -> (Portfolio | Null);
+  // Metode untuk mendapatkan semua portofolio
+  query getAllPortfolios() : async -> Vec<Portfolio>;
+  // Metode untuk menambahkan portofolio baru
+  update addPortfolio(addPortfolio: record {
+    id: text;
+    portfolio_name: text;
+    personal_details: PersonalDetails;
+    experience: Vec<Experience>;
+  }) : async -> Void;
+  // Metode untuk memperbarui portofolio berdasarkan ID
+  update updatePortfolio(updatePortfolio: record {
+    id: text;
+    portfolio_name?: text;
+    personal_details?: PersonalDetails;
+    experience?: Vec<Experience>;
+  }) : async -> Void;
+  // Metode untuk menghapus portofolio berdasarkan ID
+  update deletePortfolio(deleteById: text) : async -> Void;
+};
