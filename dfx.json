@@ -1,11 +1,13 @@
 {
     "canisters": {
-        "agriculture": {
+        "portfolio": {
             "type": "custom",
             "main": "src/index.ts",
             "candid": "src/index.did",
-            "build": "npx azle agriculture",
-            "wasm": ".azle/agriculture/agriculture.wasm",
+            "build": "npx azle portfolio",
+            "root":"src",
+            "ts":"src/index.ts",
+            "wasm": ".azle/portfolio/portfolio.wasm",
             "gzip": true
         }
     }
